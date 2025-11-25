@@ -50,6 +50,8 @@ public class GdxGame extends ApplicationAdapter {
 
     }
 
+    //Test commit
+
     @Override
     public void render() {
         camera.update();
