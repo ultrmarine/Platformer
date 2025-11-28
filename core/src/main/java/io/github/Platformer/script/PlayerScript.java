@@ -79,7 +79,6 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
             case JUMP:
                 TransformComponent transformComponent = transformMapper.get(entity);
                 impulse.set(speed.x,50000); //смотрим по высоте стоит ли моделка на полу или нет,нужно потом поменять на проверку touchedPlatforms
-                System.out.println(transformComponent.y);
                 break;
         }
 
@@ -107,6 +106,8 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
         playerComponent.touchedPlatforms = 0;
     }
 
+
+    // помогает персонажу не улететь в небеса,грубо говоря добавляет трение
     @Override
     public void preSolve(int contactEntity, Fixture contactFixture, Fixture ownFixture, Contact contact) {
         TransformComponent transformComponent = transformMapper.get(this.entity);

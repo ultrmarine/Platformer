@@ -36,6 +36,7 @@ public class CameraSystem extends IteratingSystem {
         }
     }
 
+
     public void setFocus(int focus) {
         this.focus = focus;
     }

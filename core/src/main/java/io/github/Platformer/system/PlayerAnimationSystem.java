@@ -33,7 +33,7 @@ public class PlayerAnimationSystem extends IteratingSystem {
         if (body == null)
             return;
 
-        PlayerComponent playerComponent = playerMapper.get(entity);
+//        PlayerComponent playerComponent = playerMapper.get(entity);
         SpriteAnimationComponent spriteAnimationComponent = spriteMapper.get(entity);
         SpriteAnimationStateComponent spriteAnimationStateComponent = spriteStateMapper.get(entity);
         TransformComponent transformComponent = transformMapper.get(entity);
@@ -50,7 +50,6 @@ public class PlayerAnimationSystem extends IteratingSystem {
             spriteAnimationComponent.playMode = Animation.PlayMode.LOOP;
 
             spriteAnimationComponent.currentAnimation = "run";
-            System.out.println(body.getLinearVelocity().x);
         }
 
         if (Math.abs(body.getLinearVelocity().x) >= 0 && Math.abs(body.getLinearVelocity().x) <= 1.5) {
