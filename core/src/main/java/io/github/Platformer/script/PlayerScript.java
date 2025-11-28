@@ -49,6 +49,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
 
         mPhysicsBodyComponent = physicsMapper.get(item);
 
+        mPhysicsBodyComponent.body.setFixedRotation(true);
     }
 
     @Override
@@ -60,13 +61,13 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
         body.setGravityScale(9.83f); // команда задаёт гравитацию
 
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
-            if (body.getLinearVelocity().y >= 0 && playerComponent.touchedPlatforms != 1){
+            if (playerComponent.touchedPlatforms != 1){
                 movePlayer(JUMP_LEFT);
             } else {
                 movePlayer(LEFT);
             }
         } else if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-            if (body.getLinearVelocity().y >= 0 && playerComponent.touchedPlatforms != 1){
+            if (playerComponent.touchedPlatforms != 1){
                 movePlayer(JUMP_RIGHT);
             }else {
                 movePlayer(RIGHT);
@@ -79,27 +80,27 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
             movePlayer(JUMP);
         }
 
-
     }
 
     public void movePlayer(int direction) {
         Body body = mPhysicsBodyComponent.body;
         speed.set(body.getLinearVelocity());
+
         switch (direction) {
             case JUMP_RIGHT: //задаём разную скорость в воздухе и на земле,а то странно это выглядело
-                impulse.set(1200, speed.y);
+                impulse.set(24000, speed.y);
                 break;
             case JUMP_LEFT:
-                impulse.set(-1200, speed.y);
+                impulse.set(-24000, speed.y);
                 break;
             case LEFT:
-                impulse.set(-5000, speed.y);
+                impulse.set(-50000, speed.y);
                 break;
             case RIGHT:
-                impulse.set(5000, speed.y);
+                impulse.set(50000, speed.y);
                 break;
             case JUMP:
-                impulse.set(speed.x,150000);
+                impulse.set(speed.x,40000000);
                 break;
         }
 
@@ -118,12 +119,15 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
     @Override
     public void beginContact(int contactEntity, Fixture contactFixture, Fixture ownFixture, Contact contact) {
         MainItemComponent mainItemComponent = mainItemMapper.get(contactEntity);
-
         PlayerComponent playerComponent = playerMapper.get(animEntity);
-        if (mainItemComponent.tags.contains("ground")){
-            playerComponent.touchedPlatforms = 1;
+
+
+        if (mainItemComponent.tags.contains("platform")) {
+            Vector2 normal = contact.getWorldManifold().getNormal();
+            if (Math.abs(normal.y) > 0.7f) { // проверка,чтоб если чел ударился моделькой об бок платформы ему не давало возможность прыгнуть ещё раз
+                playerComponent.touchedPlatforms = 1;
+            }
         }
-        System.out.println(playerComponent.touchedPlatforms);
     }
 
     @Override
@@ -136,15 +140,15 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
     // помогает персонажу не улететь в небеса,грубо говоря добавляет трение
     @Override
     public void preSolve(int contactEntity, Fixture contactFixture, Fixture ownFixture, Contact contact) {
-        TransformComponent transformComponent = transformMapper.get(this.entity);
+        Vector2 normal = contact.getWorldManifold().getNormal();
 
-        TransformComponent colliderTransform = transformMapper.get(contactEntity);
-        DimensionsComponent colliderDimension = dimensionsMapper.get(contactEntity);
-
-        if (transformComponent.y < colliderTransform.y + colliderDimension.height) {
-            contact.setFriction(0);
-        } else {
+        // через нормал чекаем направление с которым плеер столкнулся и выдаём нужное трение для неё
+        if (Math.abs(normal.x) > 0.7f) { // тут понимаемЮчто это стена и выдаём маленькое трение чтоб чел упал
+            contact.setFriction(0.1f);
+        } else if (Math.abs(normal.y) > 0.7f) { // а тут понимаем,что это пол и даём нормальное трение
             contact.setFriction(1);
+        } else {
+            contact.setFriction(0);
         }
     }
 

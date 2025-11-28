@@ -30,7 +30,7 @@ public class CameraSystem extends IteratingSystem {
                 float x = transformComponent.x + 40; // получаем х плеера и прибавляем к нему рандомное число (наверн в пикселях я хз лол),потом по этому иксу камера будет следить за ним
                 float y = transformComponent.y + 20; // тоже самое только с y
 
-                mVector3.set(x, y, 0);
+                mVector3.set(x, y, 10);
                 camera.position.lerp(mVector3, 0.1f); // lerp это плавное смещение камеры,0.1f это скорость следования,больше 1 кстати артефакты с двоением экрана начинается
             }
         }

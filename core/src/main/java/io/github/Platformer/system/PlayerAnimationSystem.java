@@ -33,7 +33,7 @@ public class PlayerAnimationSystem extends IteratingSystem {
         if (body == null)
             return;
 
-//        PlayerComponent playerComponent = playerMapper.get(entity);
+        PlayerComponent playerComponent = playerMapper.get(entity);
         SpriteAnimationComponent spriteAnimationComponent = spriteMapper.get(entity);
         SpriteAnimationStateComponent spriteAnimationStateComponent = spriteStateMapper.get(entity);
         TransformComponent transformComponent = transformMapper.get(entity);
@@ -56,7 +56,14 @@ public class PlayerAnimationSystem extends IteratingSystem {
             spriteAnimationComponent.currentAnimation = "idle";
         }
 
+        if (body.getLinearVelocity().y >= 10 && playerComponent.touchedPlatforms != 1) {
+            spriteAnimationComponent.currentAnimation = "jump";
+            System.out.println(body.getLinearVelocity().y);
+        }
 
+        if (body.getLinearVelocity().y <= -0 && playerComponent.touchedPlatforms != 1){
+            spriteAnimationComponent.currentAnimation = "fall";
+        }
 
         spriteAnimationStateComponent.set(spriteAnimationComponent);
     }

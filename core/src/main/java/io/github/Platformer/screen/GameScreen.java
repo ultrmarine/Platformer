@@ -51,7 +51,7 @@ public class GameScreen implements Screen {
 
 
         camera = new OrthographicCamera();
-        viewport = new FitViewport(320, 240, camera);
+        viewport = new FitViewport(860, 590, camera);
 
 
         sceneLoader.loadScene("MainScene", viewport);
