@@ -30,6 +30,10 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
     public static final int RIGHT = -1;
     public static final int JUMP = 0;
 
+
+    public static final int JUMP_RIGHT = 3;
+    public static final int JUMP_LEFT = 2;
+
     private int animEntity;
     private PhysicsBodyComponent mPhysicsBodyComponent;
 
@@ -53,10 +57,20 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
         speed.set(body.getLinearVelocity());
         PlayerComponent playerComponent = playerMapper.get(animEntity);
 
+        body.setGravityScale(9.83f); // команда задаёт гравитацию
+
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
-            movePlayer(LEFT);
+            if (body.getLinearVelocity().y >= 0 && playerComponent.touchedPlatforms != 1){
+                movePlayer(JUMP_LEFT);
+            } else {
+                movePlayer(LEFT);
+            }
         } else if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-            movePlayer(RIGHT);
+            if (body.getLinearVelocity().y >= 0 && playerComponent.touchedPlatforms != 1){
+                movePlayer(JUMP_RIGHT);
+            }else {
+                movePlayer(RIGHT);
+            }
         } else{
             body.setLinearVelocity(0, speed.y);
         }
@@ -64,12 +78,20 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
         if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && playerComponent.touchedPlatforms != 0) { // нужна сделать проверку именно на напольные платформы,а то он даёт прыгнуть и от стен
             movePlayer(JUMP);
         }
+
+
     }
 
     public void movePlayer(int direction) {
         Body body = mPhysicsBodyComponent.body;
         speed.set(body.getLinearVelocity());
         switch (direction) {
+            case JUMP_RIGHT: //задаём разную скорость в воздухе и на земле,а то странно это выглядело
+                impulse.set(1200, speed.y);
+                break;
+            case JUMP_LEFT:
+                impulse.set(-1200, speed.y);
+                break;
             case LEFT:
                 impulse.set(-5000, speed.y);
                 break;
@@ -77,8 +99,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
                 impulse.set(5000, speed.y);
                 break;
             case JUMP:
-                TransformComponent transformComponent = transformMapper.get(entity);
-                impulse.set(speed.x,50000); //смотрим по высоте стоит ли моделка на полу или нет,нужно потом поменять на проверку touchedPlatforms
+                impulse.set(speed.x,150000);
                 break;
         }
 
@@ -96,8 +117,13 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
 
     @Override
     public void beginContact(int contactEntity, Fixture contactFixture, Fixture ownFixture, Contact contact) {
+        MainItemComponent mainItemComponent = mainItemMapper.get(contactEntity);
+
         PlayerComponent playerComponent = playerMapper.get(animEntity);
-        playerComponent.touchedPlatforms = 1;
+        if (mainItemComponent.tags.contains("ground")){
+            playerComponent.touchedPlatforms = 1;
+        }
+        System.out.println(playerComponent.touchedPlatforms);
     }
 
     @Override
