@@ -34,7 +34,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
     private PhysicsBodyComponent mPhysicsBodyComponent;
 
     private final Vector2 impulse = new Vector2(0, 0);
-    private final Vector2 speed = new Vector2(0, -50);
+    private final Vector2 speed = new Vector2(0, 0);
 
     @Override
     public void init(int item) {
@@ -61,7 +61,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
             body.setLinearVelocity(0, speed.y);
         }
 
-        if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && playerComponent.touchedPlatforms == 1) { // нужна сделать проверку именно на напольные платформы,а то он даёт прыгнуть и от стен
+        if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && playerComponent.touchedPlatforms != 0) { // нужна сделать проверку именно на напольные платформы,а то он даёт прыгнуть и от стен
             movePlayer(JUMP);
         }
     }

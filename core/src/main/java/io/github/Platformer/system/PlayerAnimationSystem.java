@@ -3,6 +3,8 @@ package io.github.Platformer.system;
 import com.artemis.ComponentMapper;
 import com.artemis.annotations.All;
 import com.artemis.systems.IteratingSystem;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.physics.box2d.Body;
 
@@ -36,25 +38,26 @@ public class PlayerAnimationSystem extends IteratingSystem {
         SpriteAnimationStateComponent spriteAnimationStateComponent = spriteStateMapper.get(entity);
         TransformComponent transformComponent = transformMapper.get(entity);
 
+        // proverka na povorot personaja
+        if(Gdx.input.isKeyJustPressed(Input.Keys.A)){
+            transformComponent.flipX = true;
+        }
+        if(Gdx.input.isKeyJustPressed(Input.Keys.D)){
+            transformComponent.flipX = false;
+        }
+
         if (Math.abs(body.getLinearVelocity().x) > 0) {
             spriteAnimationComponent.playMode = Animation.PlayMode.LOOP;
 
             spriteAnimationComponent.currentAnimation = "run";
-//            spriteAnimationComponent.fps = Math.max(6, (int)Math.abs(body.getLinearVelocity().x) * 3);
-
-            transformComponent.flipX = body.getLinearVelocity().x < 0;
-        } else if (Math.abs(body.getLinearVelocity().x) < 0) {
-            transformComponent.flipX = body.getLinearVelocity().x < 0;
+            System.out.println(body.getLinearVelocity().x);
         }
-//        else if (playerComponent.touchedPlatforms > 0) {
-//            spriteAnimationComponent.playMode = Animation.PlayMode.LOOP;
-//
-//            spriteAnimationComponent.currentAnimation = "idle";
-//        }
 
         if (Math.abs(body.getLinearVelocity().x) >= 0 && Math.abs(body.getLinearVelocity().x) <= 1.5) {
             spriteAnimationComponent.currentAnimation = "idle";
         }
+
+
 
         spriteAnimationStateComponent.set(spriteAnimationComponent);
     }
