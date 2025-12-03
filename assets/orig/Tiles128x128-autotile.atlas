@@ -1,0 +1,111 @@
+Tiles128x128-autotile.png
+	size: 512, 512
+	filter: Linear, Linear
+Tiles128x128-mini
+	bounds: 1, 409, 45, 100
+Tiles128x1280
+	bounds: 1, 307, 45, 100
+Tiles128x1281
+	bounds: 48, 409, 45, 100
+Tiles128x12810
+	bounds: 1, 205, 45, 100
+Tiles128x12811
+	bounds: 48, 307, 45, 100
+Tiles128x12812
+	bounds: 95, 409, 45, 100
+Tiles128x12813
+	bounds: 1, 103, 45, 100
+Tiles128x12815
+	bounds: 48, 205, 45, 100
+Tiles128x12816
+	bounds: 48, 205, 45, 100
+Tiles128x12817
+	bounds: 48, 205, 45, 100
+Tiles128x12818
+	bounds: 48, 205, 45, 100
+Tiles128x1282
+	bounds: 48, 205, 45, 100
+Tiles128x1283
+	bounds: 48, 205, 45, 100
+Tiles128x12852
+	bounds: 48, 205, 45, 100
+Tiles128x12853
+	bounds: 48, 205, 45, 100
+Tiles128x12854
+	bounds: 48, 205, 45, 100
+Tiles128x12820
+	bounds: 95, 307, 45, 100
+Tiles128x12821
+	bounds: 142, 409, 45, 100
+Tiles128x12822
+	bounds: 1, 1, 45, 100
+Tiles128x12823
+	bounds: 48, 103, 45, 100
+Tiles128x12824
+	bounds: 95, 205, 45, 100
+Tiles128x12825
+	bounds: 142, 307, 45, 100
+Tiles128x12826
+	bounds: 189, 409, 45, 100
+Tiles128x12827
+	bounds: 48, 1, 45, 100
+Tiles128x12828
+	bounds: 95, 103, 45, 100
+Tiles128x12829
+	bounds: 142, 205, 45, 100
+Tiles128x12830
+	bounds: 189, 307, 45, 100
+Tiles128x12831
+	bounds: 236, 409, 45, 100
+Tiles128x12832
+	bounds: 95, 1, 45, 100
+Tiles128x12833
+	bounds: 142, 103, 45, 100
+Tiles128x12834
+	bounds: 189, 205, 45, 100
+Tiles128x12835
+	bounds: 236, 307, 45, 100
+Tiles128x12836
+	bounds: 283, 409, 45, 100
+Tiles128x12837
+	bounds: 142, 1, 45, 100
+Tiles128x12838
+	bounds: 189, 103, 45, 100
+Tiles128x12839
+	bounds: 236, 205, 45, 100
+Tiles128x12840
+	bounds: 283, 307, 45, 100
+Tiles128x12841
+	bounds: 330, 409, 45, 100
+Tiles128x12842
+	bounds: 189, 1, 45, 100
+Tiles128x12843
+	bounds: 236, 103, 45, 100
+Tiles128x12844
+	bounds: 283, 205, 45, 100
+Tiles128x12845
+	bounds: 330, 307, 45, 100
+Tiles128x12846
+	bounds: 377, 409, 45, 100
+Tiles128x12847
+	bounds: 236, 1, 45, 100
+Tiles128x12848
+	bounds: 283, 103, 45, 100
+Tiles128x1285
+	bounds: 330, 205, 45, 100
+Tiles128x12855
+	bounds: 377, 307, 45, 100
+Tiles128x12856
+	bounds: 424, 409, 45, 100
+Tiles128x12857
+	bounds: 283, 1, 45, 100
+Tiles128x12858
+	bounds: 330, 103, 45, 100
+Tiles128x12859
+	bounds: 377, 205, 45, 100
+Tiles128x1286
+	bounds: 424, 307, 45, 100
+Tiles128x1287
+	bounds: 330, 1, 45, 100
+Tiles128x1288
+	bounds: 377, 103, 45, 100
