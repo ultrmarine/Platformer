@@ -15,6 +15,7 @@ import games.rednblack.editor.renderer.components.physics.PhysicsBodyComponent;
 import games.rednblack.editor.renderer.physics.PhysicsContact;
 import games.rednblack.editor.renderer.scripts.BasicScript;
 import games.rednblack.editor.renderer.utils.ItemWrapper;
+import io.github.Platformer.component.CoinComponent;
 import io.github.Platformer.component.PlayerComponent;
 
 public class PlayerScript extends BasicScript implements PhysicsContact {
@@ -24,6 +25,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
     protected ComponentMapper<TransformComponent> transformMapper;
     protected ComponentMapper<PlayerComponent> playerMapper;
     protected ComponentMapper<MainItemComponent> mainItemMapper;
+    protected ComponentMapper<CoinComponent> coinMapper;
     protected ComponentMapper<DimensionsComponent> dimensionsMapper;
 
     public static final int LEFT = 1;
@@ -72,7 +74,8 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
             }else {
                 movePlayer(RIGHT);
             }
-        } else{
+        }
+        else{
             body.setLinearVelocity(0, speed.y);
         }
 
@@ -121,6 +124,11 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
         MainItemComponent mainItemComponent = mainItemMapper.get(contactEntity);
         PlayerComponent playerComponent = playerMapper.get(animEntity);
 
+        CoinComponent coinComponent = coinMapper.get(contactEntity);
+        if (coinComponent != null) {
+            playerComponent.coinsCollected += coinComponent.value;
+            mEngine.delete(contactEntity);  //удаляет монетку при контакте с ней
+        }
 
         if (mainItemComponent.tags.contains("platform")) {
             Vector2 normal = contact.getWorldManifold().getNormal();
