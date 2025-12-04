@@ -15,7 +15,9 @@ import games.rednblack.editor.renderer.resources.ResourceManagerLoader;
 import games.rednblack.editor.renderer.utils.ComponentRetriever;
 import games.rednblack.editor.renderer.utils.ItemWrapper;
 import io.github.Platformer.GdxGame;
+import io.github.Platformer.component.CoinComponent;
 import io.github.Platformer.component.PlayerComponent;
+import io.github.Platformer.component.SpikeComponent;
 import io.github.Platformer.script.PlayerScript;
 import io.github.Platformer.system.CameraSystem;
 import io.github.Platformer.system.PlayerAnimationSystem;
@@ -29,12 +31,16 @@ public class GameScreen implements Screen {
     private OrthographicCamera camera;
     private World engine;
 
+    private int playerEntityId; // это нужно дла проверки хп и экрана смерти/проигрыша
+
     public GameScreen(GdxGame game) {
         this.game = game;
     }
 
     @Override
     public void show() {
+
+
         AssetManager assetManager = game.assetManager;
         assetManager.setLoader(AsyncResourceManager.class, new ResourceManagerLoader(assetManager.getFileHandleResolver()));
         assetManager.load("project.dt", AsyncResourceManager.class);
@@ -53,7 +59,6 @@ public class GameScreen implements Screen {
         camera = new OrthographicCamera();
         viewport = new FitViewport(860, 590, camera);
 
-
         sceneLoader.loadScene("MainScene", viewport);
 
         ItemWrapper root = new ItemWrapper(sceneLoader.getRoot(), engine);
@@ -62,9 +67,19 @@ public class GameScreen implements Screen {
         ItemWrapper player = root.getChild("player");
         ComponentRetriever.initialize(engine);
         ComponentRetriever.create(player.getChild("player-anim").getEntity(), PlayerComponent.class, engine);
+
+        playerEntityId = player.getChild("player-anim").getEntity(); // айди плеера, чтобы дальше проверять его хп
+
         PlayerScript playerScript = new PlayerScript();
         player.addScript(playerScript);
         cameraSystem.setFocus(player.getEntity());
+
+        ComponentRetriever.addMapper(CoinComponent.class);
+        sceneLoader.addComponentByTagName("coin", CoinComponent.class);
+
+        ComponentRetriever.addMapper(SpikeComponent.class);
+        sceneLoader.addComponentByTagName("spike", SpikeComponent.class);
+
     }
 
     @Override
@@ -76,6 +91,12 @@ public class GameScreen implements Screen {
 
         viewport.apply();
         engine.process();
+
+        PlayerComponent player = ComponentRetriever.get(playerEntityId, PlayerComponent.class, engine); //получаем самого плеера и его хп монеты и тд
+        if (player.hp!=1){ // чекает хп и в случае получения урона показывает экран смерты
+            game.setScreen(new DeathScreen(game));
+            dispose();
+        }
     }
 
     @Override

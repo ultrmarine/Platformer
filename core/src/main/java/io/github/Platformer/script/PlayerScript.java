@@ -17,6 +17,7 @@ import games.rednblack.editor.renderer.scripts.BasicScript;
 import games.rednblack.editor.renderer.utils.ItemWrapper;
 import io.github.Platformer.component.CoinComponent;
 import io.github.Platformer.component.PlayerComponent;
+import io.github.Platformer.component.SpikeComponent;
 
 public class PlayerScript extends BasicScript implements PhysicsContact {
 
@@ -26,6 +27,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
     protected ComponentMapper<PlayerComponent> playerMapper;
     protected ComponentMapper<MainItemComponent> mainItemMapper;
     protected ComponentMapper<CoinComponent> coinMapper;
+    protected ComponentMapper<SpikeComponent> spikeMapper;
     protected ComponentMapper<DimensionsComponent> dimensionsMapper;
 
     public static final int LEFT = 1;
@@ -98,9 +100,13 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
                 break;
             case LEFT:
                 impulse.set(-50000, speed.y);
+//                PlayerComponent playerComponent = playerMapper.get(animEntity);
+//                System.out.println(playerComponent.coinsCollected); // тупо чекал сбор монеток
                 break;
             case RIGHT:
                 impulse.set(50000, speed.y);
+//                PlayerComponent pplayerComponent = playerMapper.get(animEntity);
+//                System.out.println(pplayerComponent.coinsCollected); // тупо чекал сбор монеток
                 break;
             case JUMP:
                 impulse.set(speed.x,40000000);
@@ -126,7 +132,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
 
         CoinComponent coinComponent = coinMapper.get(contactEntity);
         if (coinComponent != null) {
-            playerComponent.coinsCollected += coinComponent.value;
+            playerComponent.coinsCollected += coinComponent.value; //+денежки когда косаешся монеты
             mEngine.delete(contactEntity);  //удаляет монетку при контакте с ней
         }
 
@@ -136,12 +142,23 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
                 playerComponent.touchedPlatforms = 1;
             }
         }
+
+        SpikeComponent spikeComponent = spikeMapper.get(contactEntity);
+        if (spikeComponent != null && mainItemComponent.tags.contains("spike")){
+            Vector2 normal = contact.getWorldManifold().getNormal();
+            if (Math.abs(normal.y) > 0.7f) { // проверка,чтоб если чел ударился моделькой об бок платформы ему не давало возможность прыгнуть ещё раз
+                playerComponent.hp -= spikeComponent.value; //отнимает хп когда касаешся шипов
+            }
+        }
     }
 
     @Override
     public void endContact(int contactEntity, Fixture contactFixture, Fixture ownFixture, Contact contact) {
-        PlayerComponent playerComponent = playerMapper.get(animEntity);
-        playerComponent.touchedPlatforms = 0;
+        MainItemComponent item = mainItemMapper.get(contactEntity);
+        if (item != null && item.tags.contains("platform")) {
+            PlayerComponent playerComponent = playerMapper.get(animEntity);
+            playerComponent.touchedPlatforms = 0;
+        }
     }
 
 

@@ -2,324 +2,400 @@ pack.png
 	size: 2048, 2048
 	filter: Linear, Linear
 0
-	bounds: 1, 1313, 1280, 720
-00
-	bounds: 1, 591, 1280, 720
-Background1
-	bounds: 1, 269, 480, 320
+	bounds: 1, 245, 1280, 720
+1
+	bounds: 1283, 139, 576, 324
 Background2
-	bounds: 1685, 1339, 94, 192
+	bounds: 1923, 1540, 94, 192
+BasicTileSet1(Dark)
+	bounds: 1268, 228, 13, 15
 Buildings
-	bounds: 893, 10, 47, 72
+	bounds: 536, 1, 47, 72
 Tiles128x128
-	bounds: 1283, 1533, 500, 500
+	bounds: 1283, 465, 500, 500
+back1
+	bounds: 1, 967, 1920, 1080
 background4
-	bounds: 1907, 1773, 128, 260
+	bounds: 1785, 705, 128, 260
 blackcol
-	bounds: 1283, 1291, 400, 240
+	bounds: 1, 3, 400, 240
+coin
+	bounds: 1865, 12, 16, 15
 door
-	bounds: 842, 8, 49, 74
+	bounds: 1998, 1109, 49, 74
 floor5
-	bounds: 489, 167, 173, 125
-floor6
-	bounds: 1283, 525, 197, 125
-floor7
-	bounds: 1283, 779, 310, 125
-floor8
-	bounds: 1283, 652, 310, 125
+	bounds: 1865, 79, 173, 125
 floor9
-	bounds: 483, 294, 357, 125
-floorback
-	bounds: 842, 464, 357, 125
-floorback2
-	bounds: 1283, 1033, 357, 125
-floorback3
-	bounds: 842, 337, 357, 125
-floorback4
-	bounds: 1283, 906, 357, 125
+	bounds: 1506, 12, 357, 125
 floorback5
-	bounds: 1, 99, 357, 168
+	bounds: 403, 75, 357, 168
 floorback6
-	bounds: 483, 421, 357, 168
-floorrrrrrr
-	bounds: 1091, 174, 64, 79
+	bounds: 762, 75, 357, 168
 flor2
-	bounds: 1358, 363, 36, 16
+	bounds: 853, 23, 36, 16
 flor3
-	bounds: 1277, 463, 131, 60
-flor4
-	bounds: 664, 171, 173, 121
-florrr
-	bounds: 1929, 1282, 64, 79
+	bounds: 403, 13, 131, 60
 garage
-	bounds: 1276, 335, 80, 44
+	bounds: 1922, 343, 80, 44
 player
 	index: 0
-	bounds: 969, 255, 120, 80
+	bounds: 1923, 974, 120, 80
 player
 	index: 1
-	bounds: 839, 166, 120, 80
+	bounds: 1914, 553, 120, 80
 player
 	index: 10
-	bounds: 1914, 1691, 120, 80
+	bounds: 1914, 471, 120, 80
 player
 	index: 11
-	bounds: 1914, 1609, 120, 80
-player
-	index: 12
-	bounds: 1915, 1527, 120, 80
-player
-	index: 13
-	bounds: 1915, 1445, 120, 80
-player
-	index: 14
-	bounds: 1887, 1363, 120, 80
-player
-	index: 15
-	bounds: 1159, 250, 120, 80
-player
-	index: 16
-	bounds: 1685, 1257, 120, 80
-player
-	index: 25
-	bounds: 1685, 1257, 120, 80
-player
-	index: 24
-	bounds: 1685, 1257, 120, 80
-player
-	index: 17
-	bounds: 1668, 1175, 120, 80
-player
-	index: 18
-	bounds: 1668, 1093, 120, 80
-player
-	index: 19
-	bounds: 1642, 1011, 120, 80
-player
-	index: 2
-	bounds: 1642, 929, 120, 80
-player
-	index: 20
-	bounds: 1410, 443, 120, 80
-player
-	index: 21
-	bounds: 1532, 447, 120, 80
-player
-	index: 22
-	bounds: 969, 173, 120, 80
-player
-	index: 23
-	bounds: 1157, 168, 120, 80
-player
-	index: 26
-	bounds: 664, 89, 120, 80
-player
-	index: 27
-	bounds: 786, 84, 120, 80
-player
-	index: 28
-	bounds: 908, 84, 120, 80
-player
-	index: 29
-	bounds: 1030, 91, 120, 80
-player
-	index: 3
-	bounds: 1152, 86, 120, 80
-player
-	index: 30
-	bounds: 1030, 9, 120, 80
-player
-	index: 31
-	bounds: 1152, 4, 120, 80
-player
-	index: 32
-	bounds: 1532, 365, 120, 80
-player
-	index: 33
-	bounds: 1277, 381, 120, 80
-player
-	index: 34
-	bounds: 1399, 361, 120, 80
-player
-	index: 35
-	bounds: 1281, 253, 120, 80
-player
-	index: 36
-	bounds: 1403, 279, 120, 80
-player
-	index: 37
-	bounds: 1525, 283, 120, 80
-player
-	index: 38
-	bounds: 1403, 197, 120, 80
-player
-	index: 39
-	bounds: 1525, 201, 120, 80
-player
-	index: 4
-	bounds: 1281, 171, 120, 80
-player
-	index: 40
-	bounds: 1403, 115, 120, 80
-player
-	index: 41
-	bounds: 1807, 1257, 120, 80
-player
-	index: 42
-	bounds: 1790, 1175, 120, 80
-player
-	index: 43
-	bounds: 1790, 1093, 120, 80
-player
-	index: 44
-	bounds: 1764, 1011, 120, 80
-player
-	index: 45
-	bounds: 1764, 929, 120, 80
-player
-	index: 5
-	bounds: 1279, 89, 120, 80
-player
-	index: 6
-	bounds: 1274, 7, 120, 80
-player
-	index: 7
-	bounds: 1401, 33, 120, 80
-player
-	index: 8
-	bounds: 1668, 847, 120, 80
-player
-	index: 9
-	bounds: 655, 7, 120, 80
-player_0
-	index: 4
-	bounds: 1642, 1108, 20, 50
-player_0
-	index: 1
-	bounds: 1396, 1, 50, 30
-player_0
-	index: 3
-	bounds: 1448, 1, 50, 30
+	bounds: 1922, 389, 120, 80
 player_0
 	index: 0
-	bounds: 1995, 1253, 50, 50
+	bounds: 749, 23, 50, 50
 player_0
 	index: 2
-	bounds: 1992, 1201, 50, 50
+	bounds: 801, 23, 50, 50
+player_0
+	index: 1
+	bounds: 972, 43, 50, 30
+player_0
+	index: 3
+	bounds: 1024, 43, 50, 30
+player_0
+	index: 4
+	bounds: 2019, 1682, 20, 50
 player_0
 	index: 5
-	bounds: 1887, 1454, 20, 30
+	bounds: 2010, 47, 20, 30
 prop1
-	bounds: 1647, 209, 45, 30
+	bounds: 1990, 258, 45, 30
 prop2
-	bounds: 777, 14, 63, 68
+	bounds: 585, 5, 63, 68
 prop3
-	bounds: 1785, 1720, 120, 313
-stairs
-	bounds: 1482, 529, 172, 121
+	bounds: 1923, 1734, 120, 313
 wall
-	bounds: 493, 8, 80, 48
+	bounds: 1865, 29, 80, 48
 white-pixel
-	bounds: 839, 291, 1, 1
+	bounds: 1506, 9, 1, 1
 Мусорка
-	bounds: 622, 38, 31, 46
+	bounds: 1999, 1186, 31, 46
 Мусорка2
-	bounds: 1995, 1305, 49, 56
+	bounds: 698, 17, 49, 56
 Мусорка3
-	bounds: 622, 7, 31, 29
+	bounds: 1076, 44, 31, 29
 кисть1
-	bounds: 364, 26, 127, 111
+	bounds: 1915, 724, 127, 111
 кисть2
-	bounds: 493, 58, 127, 107
+	bounds: 1785, 466, 127, 107
 кисть3
-	bounds: 1595, 664, 104, 110
+	bounds: 1923, 1315, 104, 110
 кисть4
-	bounds: 1201, 332, 73, 127
+	bounds: 1923, 1056, 73, 127
 кисть5
-	bounds: 360, 139, 127, 128
+	bounds: 1785, 575, 127, 128
 кисть6
-	bounds: 1201, 461, 74, 128
+	bounds: 1923, 1185, 74, 128
 кисть7
-	bounds: 1595, 776, 59, 128
+	bounds: 1861, 336, 59, 128
 кисть8
-	bounds: 1785, 1590, 127, 128
+	bounds: 1861, 206, 127, 128
 кисть9
-	bounds: 1656, 534, 59, 128
+	bounds: 1915, 837, 59, 128
 колонна
-	bounds: 2009, 1379, 15, 64
+	bounds: 1251, 179, 15, 64
 колонна2
-	bounds: 1, 1, 79, 14
+	bounds: 698, 1, 79, 14
 коробки
-	bounds: 990, 19, 32, 63
+	bounds: 2004, 324, 32, 63
 мусорка4
-	bounds: 1848, 1355, 16, 16
+	bounds: 2025, 874, 16, 16
 окно
-	bounds: 1929, 1232, 61, 48
+	bounds: 1947, 29, 61, 48
 окно2
-	bounds: 575, 14, 45, 42
+	bounds: 1998, 1065, 45, 42
 перила
-	bounds: 1647, 275, 50, 33
+	bounds: 920, 40, 50, 33
 перила2
-	bounds: 2036, 1740, 11, 31
+	bounds: 2036, 602, 11, 31
 пещера
-	bounds: 1785, 1486, 128, 102
+	bounds: 1121, 141, 128, 102
 пещера2
-	bounds: 1781, 1373, 104, 111
+	bounds: 1923, 1427, 104, 111
 пещера3
-	bounds: 842, 248, 125, 87
-пещера4
-	bounds: 1, 17, 361, 80
+	bounds: 1922, 635, 125, 87
 пещера5
-	bounds: 1283, 1160, 383, 129
+	bounds: 1121, 8, 383, 129
 провод
-	bounds: 2037, 2012, 10, 21
+	bounds: 1109, 52, 10, 21
 провод2
-	bounds: 1647, 241, 46, 32
+	bounds: 1990, 290, 46, 32
 решётка
-	bounds: 942, 18, 46, 64
+	bounds: 650, 9, 46, 64
 решётка2
-	bounds: 1647, 310, 47, 53
+	bounds: 1976, 837, 47, 53
 фонарь
-	bounds: 1091, 255, 66, 80
+	bounds: 1976, 892, 66, 80
 фонарь2
-	bounds: 1781, 1339, 65, 32
+	bounds: 853, 41, 65, 32
 фонарь3
-	bounds: 622, 86, 31, 79
+	bounds: 1999, 1234, 31, 79
 
 pack2.png
 	size: 2048, 2048
 	filter: Linear, Linear
-1
-	bounds: 1, 723, 1280, 720
+00
+	bounds: 1, 210, 1280, 720
 2
-	bounds: 1, 1, 1280, 720
+	bounds: 1283, 541, 576, 324
+3
+	bounds: 1283, 215, 576, 324
+back2
+	bounds: 1, 932, 1920, 1080
+floor6
+	bounds: 1031, 83, 197, 125
+floor7
+	bounds: 719, 83, 310, 125
+floorback
+	bounds: 1283, 88, 357, 125
+floorback2
+	bounds: 1642, 6, 357, 125
+floorback3
+	bounds: 1, 83, 357, 125
+floorback4
+	bounds: 360, 83, 357, 125
+floorrrrrrr
+	bounds: 1923, 1933, 64, 79
+flor4
+	bounds: 1861, 418, 173, 121
+florrr
+	bounds: 1983, 663, 64, 79
+player
+	index: 12
+	bounds: 1923, 1851, 120, 80
+player
+	index: 13
+	bounds: 1923, 1769, 120, 80
+player
+	index: 14
+	bounds: 1923, 1687, 120, 80
+player
+	index: 15
+	bounds: 1923, 1605, 120, 80
+player
+	index: 16
+	bounds: 1923, 1523, 120, 80
+player
+	index: 25
+	bounds: 1923, 1523, 120, 80
+player
+	index: 24
+	bounds: 1923, 1523, 120, 80
+player
+	index: 17
+	bounds: 1923, 1441, 120, 80
+player
+	index: 18
+	bounds: 1923, 1359, 120, 80
+player
+	index: 19
+	bounds: 1923, 1277, 120, 80
+player
+	index: 2
+	bounds: 1923, 1195, 120, 80
+player
+	index: 20
+	bounds: 1923, 1113, 120, 80
+player
+	index: 21
+	bounds: 1923, 1031, 120, 80
+player
+	index: 22
+	bounds: 1923, 949, 120, 80
+player
+	index: 23
+	bounds: 1923, 867, 120, 80
+player
+	index: 26
+	bounds: 1861, 662, 120, 80
+player
+	index: 27
+	bounds: 1861, 580, 120, 80
+player
+	index: 28
+	bounds: 1230, 6, 120, 80
+player
+	index: 29
+	bounds: 1352, 6, 120, 80
+player
+	index: 3
+	bounds: 1474, 6, 120, 80
+player
+	index: 30
+	bounds: 1, 1, 120, 80
+player
+	index: 31
+	bounds: 123, 1, 120, 80
+player
+	index: 32
+	bounds: 245, 1, 120, 80
+player
+	index: 33
+	bounds: 367, 1, 120, 80
+player
+	index: 34
+	bounds: 489, 1, 120, 80
+player
+	index: 35
+	bounds: 611, 1, 120, 80
+player
+	index: 36
+	bounds: 733, 1, 120, 80
+player
+	index: 37
+	bounds: 855, 1, 120, 80
+player
+	index: 38
+	bounds: 977, 1, 120, 80
+player
+	index: 39
+	bounds: 1099, 1, 120, 80
+stairs
+	bounds: 1861, 744, 172, 121
+пещера4
+	bounds: 1642, 133, 361, 80
 
 pack3.png
 	size: 2048, 2048
 	filter: Linear, Linear
-3
-	bounds: 1, 723, 1280, 720
 4
-	bounds: 1, 1, 1280, 720
+	bounds: 1283, 606, 576, 324
+5
+	bounds: 1283, 280, 576, 324
+6
+	bounds: 1, 210, 1280, 720
+back3
+	bounds: 1, 932, 1920, 1080
+floor8
+	bounds: 1, 83, 310, 125
+player
+	index: 4
+	bounds: 1923, 1932, 120, 80
+player
+	index: 40
+	bounds: 1, 1, 120, 80
+player
+	index: 41
+	bounds: 313, 128, 120, 80
+player
+	index: 42
+	bounds: 1923, 1850, 120, 80
+player
+	index: 43
+	bounds: 123, 1, 120, 80
+player
+	index: 44
+	bounds: 435, 128, 120, 80
+player
+	index: 45
+	bounds: 1923, 1768, 120, 80
+player
+	index: 5
+	bounds: 557, 128, 120, 80
+player
+	index: 6
+	bounds: 1923, 1686, 120, 80
+player
+	index: 7
+	bounds: 679, 128, 120, 80
+player
+	index: 8
+	bounds: 1923, 1604, 120, 80
+player
+	index: 9
+	bounds: 801, 128, 120, 80
 
 pack4.png
 	size: 2048, 2048
 	filter: Linear, Linear
-5
-	bounds: 1, 723, 1280, 720
-6
+7ForeGround
 	bounds: 1, 1, 1280, 720
+back4
+	bounds: 1, 723, 1920, 1080
+city 31
+	bounds: 1283, 397, 576, 324
+city 32
+	bounds: 1283, 71, 576, 324
 
 pack5.png
 	size: 2048, 2048
 	filter: Linear, Linear
-7ForeGround
-	bounds: 1, 723, 1280, 720
 BlackLight
 	bounds: 1, 1, 1280, 720
+back5
+	bounds: 1, 723, 1920, 1080
+city 33
+	bounds: 1283, 397, 576, 324
+city 34
+	bounds: 1283, 71, 576, 324
 
 pack6.png
-	size: 2048, 1024
+	size: 2048, 2048
 	filter: Linear, Linear
 BlueLight
+	bounds: 1, 1, 1280, 720
+back6
+	bounds: 1, 723, 1920, 1080
+city 35
+	bounds: 1283, 397, 576, 324
+city 61
+	bounds: 1283, 71, 576, 324
+
+pack7.png
+	size: 2048, 2048
+	filter: Linear, Linear
+back7
+	bounds: 1, 723, 1920, 1080
+cave1
+	bounds: 1, 1, 1280, 720
+city 62
+	bounds: 1283, 397, 576, 324
+city 63
+	bounds: 1283, 71, 576, 324
+
+pack8.png
+	size: 2048, 2048
+	filter: Linear, Linear
+back8
+	bounds: 1, 723, 1920, 1080
+cave2
+	bounds: 1, 1, 1280, 720
+city 64
+	bounds: 1283, 397, 576, 324
+city 65
+	bounds: 1283, 71, 576, 324
+
+pack9.png
+	size: 2048, 2048
+	filter: Linear, Linear
+Background1
+	bounds: 1283, 75, 480, 320
+back9
+	bounds: 1, 723, 1920, 1080
+cave3
+	bounds: 1, 1, 1280, 720
+city 66
+	bounds: 1283, 397, 576, 324
+
+pack10.png
+	size: 2048, 2048
+	filter: Linear, Linear
+cave4
+	bounds: 1, 1, 1280, 720
+coins-chests-etc-2-0
+	bounds: 1, 723, 912, 1040
+
+pack11.png
+	size: 2048, 1024
+	filter: Linear, Linear
+cave5
 	bounds: 1, 1, 1280, 720

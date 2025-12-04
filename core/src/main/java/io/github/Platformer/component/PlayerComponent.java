@@ -7,6 +7,9 @@ public class PlayerComponent extends PooledComponent {
     public int hp = 1;
     public int coinsCollected = 0;
 
+//    public int getCoinsCollected(){
+//        return coinsCollected;
+//    }
 
     @Override
     public void reset() {
