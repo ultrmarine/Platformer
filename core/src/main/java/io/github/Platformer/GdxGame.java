@@ -2,6 +2,7 @@ package io.github.Platformer;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.AssetManager;
+import io.github.Platformer.audio.AudioService;
 import io.github.Platformer.screen.MenuScreen;
 
 public class GdxGame extends Game {

@@ -13,6 +13,7 @@ import games.rednblack.editor.renderer.components.physics.PhysicsBodyComponent;
 import games.rednblack.editor.renderer.resources.AsyncResourceManager;
 import games.rednblack.editor.renderer.resources.ResourceManagerLoader;
 import io.github.Platformer.GdxGame;
+import io.github.Platformer.audio.AudioService;
 import io.github.Platformer.component.CoinComponent;
 import io.github.Platformer.component.PlayerComponent;
 
@@ -23,10 +24,13 @@ public class DeathScreen implements Screen {
     private SpriteBatch batch;
     private BitmapFont font;
 
+    private AudioService audioService;
+
     public DeathScreen(GdxGame game) {
         this.game = game;
         this.batch = new SpriteBatch();
-        this.font = new BitmapFont(); // позволяет что либо писать букавками внутри игры (русский кста не поддерживает) ((привет онга))
+        this.font = new BitmapFont(); // позволяет что либо писать букавками внутри игры (русский кста не поддерживает) ((привет онга)) (((здаров)))
+        this.audioService = new AudioService("GameOver.mp3");
     }
 
     @Override
@@ -34,6 +38,7 @@ public class DeathScreen implements Screen {
         game.assetManager.setLoader(AsyncResourceManager.class,
             new ResourceManagerLoader(game.assetManager.getFileHandleResolver()));
         game.assetManager.load("project.dt", AsyncResourceManager.class);
+        audioService.play();
     }
 
     @Override

@@ -15,8 +15,10 @@ import games.rednblack.editor.renderer.components.physics.PhysicsBodyComponent;
 import games.rednblack.editor.renderer.physics.PhysicsContact;
 import games.rednblack.editor.renderer.scripts.BasicScript;
 import games.rednblack.editor.renderer.utils.ItemWrapper;
+import io.github.Platformer.audio.AudioService;
 import io.github.Platformer.component.CoinComponent;
 import io.github.Platformer.component.PlayerComponent;
+import io.github.Platformer.component.SkeletonComponent;
 import io.github.Platformer.component.SpikeComponent;
 
 public class PlayerScript extends BasicScript implements PhysicsContact {
@@ -28,7 +30,10 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
     protected ComponentMapper<MainItemComponent> mainItemMapper;
     protected ComponentMapper<CoinComponent> coinMapper;
     protected ComponentMapper<SpikeComponent> spikeMapper;
+    protected ComponentMapper<SkeletonComponent> skeletonMapper;
+
     protected ComponentMapper<DimensionsComponent> dimensionsMapper;
+    protected AudioService audioService;
 
     public static final int LEFT = 1;
     public static final int RIGHT = -1;
@@ -62,7 +67,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
         speed.set(body.getLinearVelocity());
         PlayerComponent playerComponent = playerMapper.get(animEntity);
 
-        body.setGravityScale(9.83f); // команда задаёт гравитацию
+        body.setGravityScale(13f);
 
         if (Gdx.input.isKeyPressed(Input.Keys.A)) {
             if (playerComponent.touchedPlatforms != 1){
@@ -90,6 +95,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
     public void movePlayer(int direction) {
         Body body = mPhysicsBodyComponent.body;
         speed.set(body.getLinearVelocity());
+        audioService = new AudioService("jump.mp3");
 
         switch (direction) {
             case JUMP_RIGHT: //задаём разную скорость в воздухе и на земле,а то странно это выглядело
@@ -109,6 +115,7 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
 //                System.out.println(pplayerComponent.coinsCollected); // тупо чекал сбор монеток
                 break;
             case JUMP:
+                audioService.play();
                 impulse.set(speed.x,40000000);
                 break;
         }
@@ -130,10 +137,12 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
         MainItemComponent mainItemComponent = mainItemMapper.get(contactEntity);
         PlayerComponent playerComponent = playerMapper.get(animEntity);
 
+        audioService = new AudioService("coin.mp3");
         CoinComponent coinComponent = coinMapper.get(contactEntity);
         if (coinComponent != null) {
             playerComponent.coinsCollected += coinComponent.value; //+денежки когда косаешся монеты
             mEngine.delete(contactEntity);  //удаляет монетку при контакте с ней
+            audioService.play();
         }
 
         if (mainItemComponent.tags.contains("platform")) {
@@ -149,6 +158,11 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
             if (Math.abs(normal.y) > 0.7f) { // проверка,чтоб если чел ударился моделькой об бок платформы ему не давало возможность прыгнуть ещё раз
                 playerComponent.hp -= spikeComponent.value; //отнимает хп когда касаешся шипов
             }
+        }
+
+
+        if (mainItemComponent.tags.contains("skeleton")){
+            playerComponent.hp -= 1;
         }
     }
 
