@@ -64,6 +64,10 @@ public class PlayerAnimationSystem extends IteratingSystem {
             spriteAnimationComponent.currentAnimation = "fall";
         }
 
+        if (playerComponent.attacking==true){
+            spriteAnimationComponent.currentAnimation = "fall"; //пока что это затычка, нужно будет найти анимацию атаки
+        }
+
         spriteAnimationStateComponent.set(spriteAnimationComponent);
     }
 }

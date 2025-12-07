@@ -43,6 +43,8 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
     public static final int JUMP_RIGHT = 3;
     public static final int JUMP_LEFT = 2;
 
+    public static final int ATTACK = 5;
+
     private int animEntity;
     private PhysicsBodyComponent mPhysicsBodyComponent;
 
@@ -90,6 +92,13 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
             movePlayer(JUMP);
         }
 
+        if (Gdx.input.isKeyPressed(Input.Keys.S)){ // атакуем на S dada
+            movePlayer(ATTACK);
+        }
+        else {
+            playerComponent.attacking=false; // если не атакуем, то ставим attacking false
+        }
+
     }
 
     public void movePlayer(int direction) {
@@ -118,6 +127,9 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
                 audioService.play();
                 impulse.set(speed.x,40000000);
                 break;
+            case ATTACK:
+                PlayerComponent playerComponent = playerMapper.get(animEntity);
+                playerComponent.attacking=true;
         }
 
         body.applyLinearImpulse(impulse.sub(speed), body.getWorldCenter(), true);
@@ -153,17 +165,20 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
         }
 
         SpikeComponent spikeComponent = spikeMapper.get(contactEntity);
-        if (spikeComponent != null && mainItemComponent.tags.contains("spike")){
+        if (mainItemComponent.tags.contains("spike")){
             Vector2 normal = contact.getWorldManifold().getNormal();
             if (Math.abs(normal.y) > 0.7f) { // проверка,чтоб если чел ударился моделькой об бок платформы ему не давало возможность прыгнуть ещё раз
                 playerComponent.hp -= spikeComponent.value; //отнимает хп когда касаешся шипов
             }
         }
 
-        if (mainItemComponent.tags.contains("skeleton")){
+        SkeletonComponent skeletonComponent = skeletonMapper.get(contactEntity);
+        if (mainItemComponent.tags.contains("skeleton") && playerComponent.attacking==false){ //проверяем, атакует ли игрок в момент контакта, тут не атакует и дохнет
             playerComponent.hp -= 1;
         }
-
+        else if (mainItemComponent.tags.contains("skeleton") && playerComponent.attacking==true){ //проверяем, атакует ли игрок в момент контакта, тут атакует и не дохнет
+            mEngine.delete(contactEntity);
+        }
     }
 
     @Override
