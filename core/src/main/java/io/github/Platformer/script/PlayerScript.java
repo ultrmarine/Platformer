@@ -160,10 +160,10 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
             }
         }
 
-
         if (mainItemComponent.tags.contains("skeleton")){
             playerComponent.hp -= 1;
         }
+
     }
 
     @Override

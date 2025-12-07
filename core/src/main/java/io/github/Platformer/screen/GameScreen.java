@@ -141,6 +141,10 @@ public class GameScreen implements Screen {
             game.setScreen(new DeathScreen(game));
             audioService.stop();
             dispose();
+        } else if (player.coinsCollected==1) {
+            game.setScreen(new WinScreen(game));
+            audioService.stop();
+            dispose();
         }
     }
 

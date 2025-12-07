@@ -2,6 +2,7 @@ package io.github.Platformer.screen;
 
 import com.artemis.ComponentMapper;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -47,9 +48,14 @@ public class DeathScreen implements Screen {
             Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
             batch.begin();
-            font.draw(batch, "you died xdd",100,100);
+            font.draw(batch, "you died xdd:",100,100);
+            font.draw(batch, "press R to restart",200,100);
             batch.end();
 
+            if (Gdx.input.isKeyJustPressed(Input.Keys.R)) { //рестартаем лвл
+                game.setScreen(new GameScreen(game));
+                dispose();
+            }
     }
 
     @Override
