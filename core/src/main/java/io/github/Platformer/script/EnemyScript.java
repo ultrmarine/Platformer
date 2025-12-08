@@ -5,18 +5,12 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.Fixture;
-import games.rednblack.editor.renderer.components.DimensionsComponent;
 import games.rednblack.editor.renderer.components.MainItemComponent;
-import games.rednblack.editor.renderer.components.TransformComponent;
 import games.rednblack.editor.renderer.components.physics.PhysicsBodyComponent;
 import games.rednblack.editor.renderer.physics.PhysicsContact;
 import games.rednblack.editor.renderer.scripts.BasicScript;
 import games.rednblack.editor.renderer.utils.ItemWrapper;
-import io.github.Platformer.audio.AudioService;
-import io.github.Platformer.component.CoinComponent;
-import io.github.Platformer.component.PlayerComponent;
 import io.github.Platformer.component.SkeletonComponent;
-import io.github.Platformer.component.SpikeComponent;
 
 public class EnemyScript extends BasicScript implements PhysicsContact {
 
@@ -95,10 +89,9 @@ public class EnemyScript extends BasicScript implements PhysicsContact {
         MainItemComponent mainItemComponent = mainItemMapper.get(contactEntity);
         SkeletonComponent skeletonComponent = skeletonMapper.get(animEntity);
 
-        // через нормал чекаем направление с которым плеер столкнулся и выдаём нужное трение для неё
-        if (Math.abs(normal.x) > 0.7f) { // тут понимаемЮчто это стена и выдаём маленькое трение чтоб чел упал
+        if (Math.abs(normal.x) > 0.7f) {
             contact.setFriction(0.1f);
-        } else if (Math.abs(normal.y) > 0.7f) { // а тут понимаем,что это пол и даём нормальное трение
+        } else if (Math.abs(normal.y) > 0.7f) {
             contact.setFriction(1);
         } else {
             contact.setFriction(0);

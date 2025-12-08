@@ -8,6 +8,7 @@ public class PlayerComponent extends PooledComponent {
     public int coinsCollected = 0;
     public int damage = 3; // дамаг игрока
     public boolean attacking = false; // статус, атакует ли игрок
+    public boolean win = false; // победил ли игрочёк
 
 //    public int getCoinsCollected(){
 //        return coinsCollected;
@@ -20,5 +21,6 @@ public class PlayerComponent extends PooledComponent {
         hp = 1;
         damage = 3;
         attacking = false;
+        win = false;
     }
 }

@@ -29,7 +29,7 @@ import io.github.Platformer.system.PlayerAnimationSystem;
 import io.github.Platformer.system.SkeletonAnimationSystem;
 
 public class GameScreen implements Screen {
-    private final GdxGame game;
+    private GdxGame game;
 
     private SceneLoader sceneLoader;
     private AsyncResourceManager asyncResourceManager;
@@ -141,7 +141,7 @@ public class GameScreen implements Screen {
             game.setScreen(new DeathScreen(game));
             audioService.stop();
             dispose();
-        } else if (player.coinsCollected==1) {
+        } else if (player.win) {
             game.setScreen(new WinScreen(game));
             audioService.stop();
             dispose();

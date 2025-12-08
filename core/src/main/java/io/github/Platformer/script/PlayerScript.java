@@ -1,6 +1,7 @@
 package io.github.Platformer.script;
 
 import com.artemis.ComponentMapper;
+import com.artemis.World;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Vector2;
@@ -22,8 +23,7 @@ import io.github.Platformer.component.SkeletonComponent;
 import io.github.Platformer.component.SpikeComponent;
 
 public class PlayerScript extends BasicScript implements PhysicsContact {
-
-    protected com.artemis.World mEngine;
+    protected World mEngine;
     protected ComponentMapper<PhysicsBodyComponent> physicsMapper;
     protected ComponentMapper<TransformComponent> transformMapper;
     protected ComponentMapper<PlayerComponent> playerMapper;
@@ -172,12 +172,15 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
             }
         }
 
-        SkeletonComponent skeletonComponent = skeletonMapper.get(contactEntity);
         if (mainItemComponent.tags.contains("skeleton") && playerComponent.attacking==false){ //проверяем, атакует ли игрок в момент контакта, тут не атакует и дохнет
             playerComponent.hp -= 1;
         }
         else if (mainItemComponent.tags.contains("skeleton") && playerComponent.attacking==true){ //проверяем, атакует ли игрок в момент контакта, тут атакует и не дохнет
             mEngine.delete(contactEntity);
+        }
+
+        if (mainItemComponent.tags.contains("flag")) {
+            playerComponent.win = true;
         }
     }
 
