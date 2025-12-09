@@ -18,13 +18,13 @@ import games.rednblack.editor.renderer.utils.ComponentRetriever;
 import games.rednblack.editor.renderer.utils.ItemWrapper;
 import io.github.Platformer.GdxGame;
 import io.github.Platformer.audio.AudioService;
-import io.github.Platformer.component.CoinComponent;
-import io.github.Platformer.component.PlayerComponent;
-import io.github.Platformer.component.SkeletonComponent;
-import io.github.Platformer.component.SpikeComponent;
-import io.github.Platformer.script.EnemyScript;
+import io.github.Platformer.component.*;
+import io.github.Platformer.script.FlyEnemyScript;
+import io.github.Platformer.script.SkeletonScript;
+import io.github.Platformer.script.MovingPlatformScript;
 import io.github.Platformer.script.PlayerScript;
 import io.github.Platformer.system.CameraSystem;
+import io.github.Platformer.system.FlyEnemyAnimationSystem;
 import io.github.Platformer.system.PlayerAnimationSystem;
 import io.github.Platformer.system.SkeletonAnimationSystem;
 
@@ -59,10 +59,13 @@ public class GameScreen implements Screen {
         assetManager.setLoader(AsyncResourceManager.class, new ResourceManagerLoader(assetManager.getFileHandleResolver()));
         assetManager.load("project.dt", AsyncResourceManager.class);
 
+        assetManager.finishLoading();
+
         SceneConfiguration config = new SceneConfiguration();
         config.setResourceRetriever(asyncResourceManager);
         config.addSystem(new PlayerAnimationSystem());
         config.addSystem(new SkeletonAnimationSystem());
+        config.addSystem(new FlyEnemyAnimationSystem());
 
         CameraSystem cameraSystem = new CameraSystem();
         config.addSystem(cameraSystem);
@@ -80,6 +83,7 @@ public class GameScreen implements Screen {
         ItemWrapper root = new ItemWrapper(sceneLoader.getRoot(), engine);
         ComponentRetriever.addMapper(PlayerComponent.class);
         ComponentRetriever.addMapper(SkeletonComponent.class);
+        ComponentRetriever.addMapper(FlyEnemyComponent.class);
 
         ComponentRetriever.initialize(engine);
 
@@ -104,14 +108,48 @@ public class GameScreen implements Screen {
 
 
 
-        EnemyScript enemyScript1 = new EnemyScript();
-        skeleton1.addScript(enemyScript1);
-        EnemyScript enemyScript2 = new EnemyScript();
-        skeleton2.addScript(enemyScript2);
-        EnemyScript enemyScript3 = new EnemyScript();
-        skeleton3.addScript(enemyScript3);
-        EnemyScript enemyScript4 = new EnemyScript();
-        skeleton4.addScript(enemyScript4);
+        SkeletonScript skeletonScript1 = new SkeletonScript();
+        skeleton1.addScript(skeletonScript1);
+        SkeletonScript skeletonScript2 = new SkeletonScript();
+        skeleton2.addScript(skeletonScript2);
+        SkeletonScript skeletonScript3 = new SkeletonScript();
+        skeleton3.addScript(skeletonScript3);
+        SkeletonScript skeletonScript4 = new SkeletonScript();
+        skeleton4.addScript(skeletonScript4);
+
+        ItemWrapper flyenemy1 = root.getChild("flyenemy1");
+        ItemWrapper flyenemy2 = root.getChild("flyenemy2");
+        ItemWrapper flyenemy3 = root.getChild("flyenemy3");
+
+        ComponentRetriever.create(flyenemy1.getChild("flyenemy-anim").getEntity(), FlyEnemyComponent.class, engine);
+        FlyEnemyScript FlyEnemyScript1 = new FlyEnemyScript();
+        ComponentRetriever.create(flyenemy2.getChild("flyenemy-anim").getEntity(), FlyEnemyComponent.class, engine);
+        FlyEnemyScript FlyEnemyScript2 = new FlyEnemyScript();
+        ComponentRetriever.create(flyenemy3.getChild("flyenemy-anim").getEntity(), FlyEnemyComponent.class, engine);
+        FlyEnemyScript FlyEnemyScript3 = new FlyEnemyScript();
+
+        flyenemy1.addScript(FlyEnemyScript1);
+        flyenemy2.addScript(FlyEnemyScript2);
+        flyenemy3.addScript(FlyEnemyScript3);
+
+        ItemWrapper platform1 = root.getChild("moveplatform1");
+
+        MovingPlatformScript moveScript1 = new MovingPlatformScript();
+        moveScript1.speedY = 200;
+        moveScript1.minY = -2200;
+        moveScript1.maxY = -1100;
+
+        platform1.addScript(moveScript1);
+
+        ItemWrapper platform2 = root.getChild("moveplatform2");
+
+        MovingPlatformScript moveScript2 = new MovingPlatformScript();
+        moveScript2.speedY = 200;
+        moveScript2.minY = -1700;
+        moveScript2.maxY = -1300;
+
+        platform2.addScript(moveScript2);
+
 
         ComponentRetriever.addMapper(CoinComponent.class);
         sceneLoader.addComponentByTagName("coin", CoinComponent.class);

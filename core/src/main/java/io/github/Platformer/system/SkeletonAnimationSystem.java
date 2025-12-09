@@ -11,7 +11,6 @@ import games.rednblack.editor.renderer.components.TransformComponent;
 import games.rednblack.editor.renderer.components.physics.PhysicsBodyComponent;
 import games.rednblack.editor.renderer.components.sprite.SpriteAnimationComponent;
 import games.rednblack.editor.renderer.components.sprite.SpriteAnimationStateComponent;
-import io.github.Platformer.component.PlayerComponent;
 import io.github.Platformer.component.SkeletonComponent;
 
 

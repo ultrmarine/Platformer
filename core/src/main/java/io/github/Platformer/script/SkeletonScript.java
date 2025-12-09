@@ -12,7 +12,7 @@ import games.rednblack.editor.renderer.scripts.BasicScript;
 import games.rednblack.editor.renderer.utils.ItemWrapper;
 import io.github.Platformer.component.SkeletonComponent;
 
-public class EnemyScript extends BasicScript implements PhysicsContact {
+public class SkeletonScript extends BasicScript implements PhysicsContact {
 
 
     protected ComponentMapper<SkeletonComponent> skeletonMapper;

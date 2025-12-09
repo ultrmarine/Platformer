@@ -2,212 +2,223 @@ pack.png
 	size: 2048, 2048
 	filter: Linear, Linear
 0
-	bounds: 1, 244, 1280, 720
+	bounds: 1, 245, 1280, 720
 1
-	bounds: 1283, 587, 576, 324
+	bounds: 1283, 588, 576, 324
 Background2
-	bounds: 1861, 592, 94, 192
+	bounds: 1861, 593, 94, 192
 BasicTileSet1(Dark)
-	bounds: 1890, 915, 13, 15
-Buildings
-	bounds: 1779, 1, 47, 72
+	bounds: 1268, 99, 13, 15
 Tiles128x128
-	bounds: 1283, 85, 500, 500
+	bounds: 1283, 86, 500, 500
 back1
-	bounds: 1, 966, 1920, 1080
+	bounds: 1, 967, 1920, 1080
 background4
-	bounds: 1785, 75, 128, 260
+	bounds: 1785, 76, 128, 260
 blackcol
-	bounds: 1, 2, 400, 240
+	bounds: 1, 3, 400, 240
 coin
-	bounds: 1872, 915, 16, 15
-door
-	bounds: 1728, 9, 49, 74
+	bounds: 1250, 99, 16, 15
 floor5
-	bounds: 1861, 786, 173, 125
+	bounds: 1861, 787, 173, 125
 floor6
-	bounds: 1785, 460, 197, 125
+	bounds: 1785, 461, 197, 125
 floorback5
-	bounds: 403, 74, 357, 168
+	bounds: 403, 75, 357, 168
 floorback6
-	bounds: 762, 74, 357, 168
+	bounds: 762, 75, 357, 168
 flor2
-	bounds: 1816, 913, 36, 16
+	bounds: 1854, 915, 36, 16
 flor3
-	bounds: 1915, 171, 131, 60
+	bounds: 1915, 172, 131, 60
 flor4
-	bounds: 1785, 337, 173, 121
+	bounds: 1785, 338, 173, 121
+flyenemy
+	index: 1
+	bounds: 1654, 917, 48, 48
+flyenemy_1
+	index: 0
+	bounds: 1654, 917, 48, 48
+flyenemy
+	index: 10
+	bounds: 1704, 917, 48, 48
+flyenemy
+	index: 11
+	bounds: 1754, 917, 48, 48
+flyenemy
+	index: 12
+	bounds: 1804, 917, 48, 48
+flyenemy
+	index: 2
+	bounds: 1728, 1, 48, 48
 garage
-	bounds: 1687, 920, 80, 44
+	bounds: 1957, 741, 80, 44
 player
 	index: 0
-	bounds: 1923, 1651, 120, 80
+	bounds: 1923, 1652, 120, 80
 player
 	index: 1
-	bounds: 1923, 1569, 120, 80
+	bounds: 1923, 1570, 120, 80
 player
 	index: 10
-	bounds: 1923, 1487, 120, 80
+	bounds: 1923, 1488, 120, 80
 player
 	index: 11
-	bounds: 1923, 1405, 120, 80
+	bounds: 1923, 1406, 120, 80
 player
 	index: 12
-	bounds: 1923, 1323, 120, 80
+	bounds: 1923, 1324, 120, 80
 player
 	index: 13
-	bounds: 1923, 1241, 120, 80
+	bounds: 1923, 1242, 120, 80
 player
 	index: 14
-	bounds: 1923, 1159, 120, 80
+	bounds: 1923, 1160, 120, 80
 player
 	index: 15
-	bounds: 1923, 1077, 120, 80
+	bounds: 1923, 1078, 120, 80
 player
 	index: 16
-	bounds: 1923, 995, 120, 80
+	bounds: 1923, 996, 120, 80
 player
 	index: 25
-	bounds: 1923, 995, 120, 80
+	bounds: 1923, 996, 120, 80
 player
 	index: 24
-	bounds: 1923, 995, 120, 80
+	bounds: 1923, 996, 120, 80
 player
 	index: 17
-	bounds: 1923, 913, 120, 80
+	bounds: 1923, 914, 120, 80
 player
 	index: 18
-	bounds: 1484, 3, 120, 80
+	bounds: 1484, 4, 120, 80
 player
 	index: 19
-	bounds: 1606, 3, 120, 80
+	bounds: 1606, 4, 120, 80
 player_0
 	index: 0
-	bounds: 1283, 914, 50, 50
+	bounds: 1283, 915, 50, 50
 player_0
 	index: 2
-	bounds: 1335, 914, 50, 50
+	bounds: 1335, 915, 50, 50
 player_0
 	index: 4
-	bounds: 1487, 914, 20, 50
+	bounds: 1487, 915, 20, 50
+player_0
+	index: 1
+	bounds: 1960, 10, 50, 30
+player_0
+	index: 3
+	bounds: 1960, 347, 50, 30
 player_0
 	index: 5
-	bounds: 1250, 100, 20, 30
-player_0
-	index: 1
-	bounds: 1960, 358, 50, 30
-player_0
-	index: 3
-	bounds: 1910, 9, 50, 30
-prop1
-	bounds: 1962, 9, 45, 30
-prop2
-	bounds: 1984, 390, 63, 68
+	bounds: 2012, 347, 20, 30
 prop3
-	bounds: 1923, 1733, 120, 313
+	bounds: 1923, 1734, 120, 313
 skeleton
 	index: 1
-	bounds: 403, 8, 96, 64
+	bounds: 1780, 10, 96, 64
 skeleton
 	index: 2
-	bounds: 403, 8, 96, 64
-skeleton
-	index: 19
-	bounds: 403, 8, 96, 64
-skeleton
-	index: 8
-	bounds: 403, 8, 96, 64
-skeleton
-	index: 7
-	bounds: 403, 8, 96, 64
-skeleton
-	index: 32
-	bounds: 403, 8, 96, 64
-skeleton
-	index: 42
-	bounds: 403, 8, 96, 64
+	bounds: 1780, 10, 96, 64
 skeleton
 	index: 46
-	bounds: 403, 8, 96, 64
+	bounds: 1780, 10, 96, 64
+skeleton
+	index: 42
+	bounds: 1780, 10, 96, 64
+skeleton
+	index: 19
+	bounds: 1780, 10, 96, 64
+skeleton
+	index: 7
+	bounds: 1780, 10, 96, 64
+skeleton
+	index: 8
+	bounds: 1780, 10, 96, 64
 skeleton
 	index: 41
-	bounds: 403, 8, 96, 64
+	bounds: 1780, 10, 96, 64
+skeleton
+	index: 32
+	bounds: 1780, 10, 96, 64
 skeleton
 	index: 10
-	bounds: 501, 8, 96, 64
+	bounds: 403, 9, 96, 64
 skeleton
 	index: 11
-	bounds: 599, 8, 96, 64
+	bounds: 501, 9, 96, 64
 skeleton
 	index: 12
-	bounds: 697, 8, 96, 64
+	bounds: 599, 9, 96, 64
 skeleton
 	index: 13
-	bounds: 795, 8, 96, 64
+	bounds: 697, 9, 96, 64
 skeleton
 	index: 14
-	bounds: 893, 8, 96, 64
+	bounds: 795, 9, 96, 64
 skeleton
 	index: 15
-	bounds: 991, 8, 96, 64
+	bounds: 893, 9, 96, 64
+skeleton
+	index: 16
+	bounds: 991, 9, 96, 64
 skeleton_1
 	index: 0
-	bounds: 1387, 914, 50, 50
+	bounds: 1387, 915, 50, 50
 skeleton_1
 	index: 2
-	bounds: 1439, 914, 46, 50
+	bounds: 1439, 915, 46, 50
 skeleton_1
 	index: 1
-	bounds: 1957, 590, 50, 14
+	bounds: 1121, 99, 50, 14
 skeleton_1
 	index: 3
-	bounds: 1121, 98, 46, 14
+	bounds: 1173, 99, 46, 14
 wall
-	bounds: 1509, 916, 80, 48
+	bounds: 1509, 917, 80, 48
 white-pixel
-	bounds: 2045, 992, 1, 1
+	bounds: 2045, 993, 1, 1
 Мусорка
-	bounds: 1654, 918, 31, 46
+	bounds: 1250, 116, 31, 46
 Мусорка3
-	bounds: 1250, 132, 31, 29
+	bounds: 2012, 11, 31, 29
 кисть5
-	bounds: 1121, 114, 127, 128
+	bounds: 1121, 115, 127, 128
 кисть6
-	bounds: 1957, 640, 74, 128
+	bounds: 1957, 595, 74, 128
 кисть7
-	bounds: 1984, 460, 59, 128
+	bounds: 1984, 465, 59, 128
 кисть8
-	bounds: 1915, 41, 127, 128
+	bounds: 1915, 42, 127, 128
 колонна
-	bounds: 1960, 394, 15, 64
+	bounds: 1089, 9, 15, 64
 колонна2
-	bounds: 1957, 770, 79, 14
+	bounds: 1957, 725, 79, 14
 коробки
-	bounds: 1876, 10, 32, 63
+	bounds: 1878, 11, 32, 63
 мусорка4
-	bounds: 1854, 913, 16, 16
+	bounds: 1892, 915, 16, 16
 окно
-	bounds: 1591, 916, 61, 48
-окно2
-	bounds: 1769, 922, 45, 42
+	bounds: 1591, 917, 61, 48
 перила
-	bounds: 1816, 931, 50, 33
+	bounds: 1728, 51, 50, 33
 перила2
-	bounds: 2036, 880, 11, 31
+	bounds: 2036, 881, 11, 31
 пещера
-	bounds: 1915, 233, 128, 102
+	bounds: 1915, 234, 128, 102
 пещера4
-	bounds: 1121, 3, 361, 80
+	bounds: 1121, 4, 361, 80
 провод
-	bounds: 2036, 857, 10, 21
+	bounds: 2036, 858, 10, 21
 провод2
-	bounds: 1868, 932, 46, 32
-решётка
-	bounds: 1828, 9, 46, 64
+	bounds: 1912, 8, 46, 32
+фонарь
+	bounds: 1960, 379, 66, 80
 фонарь2
-	bounds: 1957, 606, 65, 32
+	bounds: 1854, 933, 65, 32
 фонарь3
-	bounds: 1250, 163, 31, 79
+	bounds: 1250, 164, 31, 79
 
 pack2.png
 	size: 2048, 2048
@@ -218,23 +229,27 @@ pack2.png
 	bounds: 1283, 641, 576, 324
 3
 	bounds: 1283, 315, 576, 324
+Buildings
+	bounds: 1989, 1729, 47, 72
 back2
 	bounds: 1, 967, 1920, 1080
+door
+	bounds: 1998, 1861, 49, 74
 flag
 	index: 1
-	bounds: 1954, 242, 60, 60
+	bounds: 1954, 258, 60, 60
 flag
 	index: 2
-	bounds: 1954, 180, 60, 60
+	bounds: 1954, 196, 60, 60
 flag
 	index: 3
-	bounds: 1954, 118, 60, 60
+	bounds: 1954, 134, 60, 60
 flag
 	index: 4
-	bounds: 1954, 56, 60, 60
+	bounds: 1954, 72, 60, 60
 flag
 	index: 5
-	bounds: 1983, 570, 60, 60
+	bounds: 1954, 10, 60, 60
 floor7
 	bounds: 1642, 188, 310, 125
 floor8
@@ -248,85 +263,107 @@ floorback2
 floorback3
 	bounds: 1278, 61, 357, 125
 floorrrrrrr
-	bounds: 1983, 715, 64, 79
+	bounds: 1923, 1727, 64, 79
 florrr
-	bounds: 1983, 634, 64, 79
+	bounds: 1983, 715, 64, 79
+flyenemy
+	index: 3
+	bounds: 1240, 11, 48, 48
+flyenemy
+	index: 4
+	bounds: 1290, 11, 48, 48
+flyenemy
+	index: 5
+	bounds: 1340, 11, 48, 48
+flyenemy
+	index: 6
+	bounds: 1390, 11, 48, 48
+flyenemy
+	index: 7
+	bounds: 1440, 11, 48, 48
+flyenemy
+	index: 8
+	bounds: 1490, 11, 48, 48
+flyenemy
+	index: 9
+	bounds: 1540, 11, 48, 48
 player
 	index: 2
 	bounds: 1922, 796, 120, 80
 player
 	index: 20
-	bounds: 1923, 1726, 120, 80
+	bounds: 1923, 1645, 120, 80
 player
 	index: 21
-	bounds: 1923, 1644, 120, 80
+	bounds: 1923, 1563, 120, 80
 player
 	index: 22
-	bounds: 1923, 1562, 120, 80
+	bounds: 1923, 1481, 120, 80
 player
 	index: 23
-	bounds: 1923, 1480, 120, 80
+	bounds: 1923, 1399, 120, 80
 player
 	index: 26
-	bounds: 1923, 1398, 120, 80
+	bounds: 1923, 1317, 120, 80
 player
 	index: 27
-	bounds: 1923, 1316, 120, 80
+	bounds: 1923, 1235, 120, 80
 player
 	index: 28
-	bounds: 1923, 1234, 120, 80
+	bounds: 1923, 1153, 120, 80
 player
 	index: 29
-	bounds: 1923, 1152, 120, 80
+	bounds: 1923, 1071, 120, 80
 player
 	index: 3
-	bounds: 1923, 1070, 120, 80
+	bounds: 1923, 989, 120, 80
 player
 	index: 30
-	bounds: 1923, 988, 120, 80
-player
-	index: 31
 	bounds: 1861, 714, 120, 80
 player
-	index: 32
+	index: 31
 	bounds: 1861, 632, 120, 80
 player
-	index: 33
+	index: 32
 	bounds: 1861, 550, 120, 80
 player
-	index: 34
+	index: 33
 	bounds: 1861, 468, 120, 80
 player
-	index: 35
+	index: 34
 	bounds: 1861, 386, 120, 80
 player
-	index: 36
+	index: 35
 	bounds: 386, 36, 120, 80
 player
-	index: 37
+	index: 36
 	bounds: 508, 36, 120, 80
 player
-	index: 38
+	index: 37
 	bounds: 630, 36, 120, 80
 player
-	index: 39
+	index: 38
 	bounds: 752, 36, 120, 80
 player
-	index: 4
+	index: 39
 	bounds: 874, 36, 120, 80
 player
-	index: 40
+	index: 4
 	bounds: 996, 36, 120, 80
 player
-	index: 41
+	index: 40
 	bounds: 1118, 40, 120, 80
+prop1
+	bounds: 1861, 805, 45, 30
+prop2
+	bounds: 1983, 645, 63, 68
 skeleton
-	index: 16
+	index: 17
 	bounds: 1861, 320, 96, 64
 stairs
 	bounds: 1104, 122, 172, 121
 Мусорка2
-	bounds: 1998, 1879, 49, 56
+	bounds: 1998, 1803, 49, 56
 кисть1
 	bounds: 1, 1, 127, 111
 кисть2
@@ -337,16 +374,18 @@ stairs
 	bounds: 1923, 1808, 73, 127
 кисть9
 	bounds: 1861, 837, 59, 128
+окно2
+	bounds: 1639, 17, 45, 42
 пещера2
 	bounds: 130, 1, 104, 111
 пещера3
 	bounds: 1922, 878, 125, 87
 пещера5
 	bounds: 1, 114, 383, 129
+решётка
+	bounds: 1959, 320, 46, 64
 решётка2
-	bounds: 1998, 1824, 47, 53
-фонарь
-	bounds: 1959, 304, 66, 80
+	bounds: 1590, 6, 47, 53
 
 pack3.png
 	size: 2048, 2048
@@ -362,77 +401,77 @@ back3
 floorback4
 	bounds: 1, 83, 357, 125
 player
-	index: 42
+	index: 41
 	bounds: 1923, 1932, 120, 80
 player
-	index: 43
+	index: 42
 	bounds: 1, 1, 120, 80
 player
-	index: 44
+	index: 43
 	bounds: 360, 128, 120, 80
 player
-	index: 45
+	index: 44
 	bounds: 1923, 1850, 120, 80
 player
-	index: 5
+	index: 45
 	bounds: 123, 1, 120, 80
 player
-	index: 6
+	index: 5
 	bounds: 482, 128, 120, 80
 player
-	index: 7
+	index: 6
 	bounds: 1923, 1768, 120, 80
 player
-	index: 8
+	index: 7
 	bounds: 604, 128, 120, 80
 player
-	index: 9
+	index: 8
 	bounds: 1923, 1686, 120, 80
-skeleton
-	index: 17
-	bounds: 1283, 214, 96, 64
+player
+	index: 9
+	bounds: 726, 128, 120, 80
 skeleton
 	index: 18
-	bounds: 245, 17, 96, 64
+	bounds: 1283, 214, 96, 64
 skeleton
 	index: 20
-	bounds: 726, 144, 96, 64
+	bounds: 245, 17, 96, 64
 skeleton
 	index: 21
 	bounds: 1923, 1620, 96, 64
 skeleton
 	index: 22
-	bounds: 1381, 214, 96, 64
+	bounds: 848, 144, 96, 64
 skeleton
 	index: 23
-	bounds: 824, 144, 96, 64
+	bounds: 1381, 214, 96, 64
 skeleton
 	index: 24
 	bounds: 1923, 1554, 96, 64
 skeleton
 	index: 25
-	bounds: 1479, 214, 96, 64
+	bounds: 946, 144, 96, 64
 skeleton
 	index: 26
-	bounds: 922, 144, 96, 64
+	bounds: 1479, 214, 96, 64
 skeleton
 	index: 27
 	bounds: 1923, 1488, 96, 64
 skeleton
 	index: 28
-	bounds: 1577, 214, 96, 64
+	bounds: 1044, 144, 96, 64
 skeleton
 	index: 29
-	bounds: 1020, 144, 96, 64
+	bounds: 1577, 214, 96, 64
 skeleton
 	index: 3
 	bounds: 1923, 1422, 96, 64
 skeleton
 	index: 30
-	bounds: 1675, 214, 96, 64
+	bounds: 1142, 144, 96, 64
 skeleton
 	index: 31
-	bounds: 1118, 144, 96, 64
+	bounds: 1675, 214, 96, 64
 skeleton
 	index: 33
 	bounds: 1923, 1356, 96, 64
@@ -474,7 +513,7 @@ skeleton
 	bounds: 654, 62, 96, 64
 skeleton
 	index: 6
-	bounds: 752, 78, 96, 64
+	bounds: 752, 62, 96, 64
 skeleton
 	index: 9
 	bounds: 850, 78, 96, 64

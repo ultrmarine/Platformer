@@ -25,14 +25,10 @@ import io.github.Platformer.component.SpikeComponent;
 public class PlayerScript extends BasicScript implements PhysicsContact {
     protected World mEngine;
     protected ComponentMapper<PhysicsBodyComponent> physicsMapper;
-    protected ComponentMapper<TransformComponent> transformMapper;
     protected ComponentMapper<PlayerComponent> playerMapper;
     protected ComponentMapper<MainItemComponent> mainItemMapper;
     protected ComponentMapper<CoinComponent> coinMapper;
     protected ComponentMapper<SpikeComponent> spikeMapper;
-    protected ComponentMapper<SkeletonComponent> skeletonMapper;
-
-    protected ComponentMapper<DimensionsComponent> dimensionsMapper;
     protected AudioService audioService;
 
     public static final int LEFT = 1;
@@ -177,6 +173,10 @@ public class PlayerScript extends BasicScript implements PhysicsContact {
         }
         else if (mainItemComponent.tags.contains("skeleton") && playerComponent.attacking==true){ //проверяем, атакует ли игрок в момент контакта, тут атакует и не дохнет
             mEngine.delete(contactEntity);
+        }
+
+        if (mainItemComponent.tags.contains("eye")){
+            playerComponent.hp -= 1;
         }
 
         if (mainItemComponent.tags.contains("flag")) {
